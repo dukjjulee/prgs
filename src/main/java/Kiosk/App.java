@@ -8,8 +8,6 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int num = 5;
 
-        String burger = "선택안됌";
-
         // 0번 선택시 프로그램 종료
 
         while (num != 0){
