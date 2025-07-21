@@ -1,5 +1,4 @@
 package Kiosk;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,11 +17,12 @@ public class Kiosk {
     public void start() {
         Scanner sc = new Scanner(System.in);
 
-        int num = 5;
+        int num = -1;
 
         while (num != 0) {
 
             // 반복문을 활용해 List 안에 있는 MenuItem을 하나씩 출력
+
             System.out.println("\n[SHAKESHACK MENU]");
             int number = 0;
             for (number = 0; number < menuItems.size(); number++)
@@ -36,21 +36,21 @@ public class Kiosk {
             if(num == 0 ){
                 break;
             }
-            else if(num >= 1){
-                System.out.println("해당 메뉴는 없습니다(1~4)");
-                num = sc.nextInt();
+
+            else if(num < 1 || num > (menuItems.size())){
+                System.out.println("해당 메뉴는 없습니다(1~"+ (menuItems.size()) +  ")");
             }
+
             // 선택한 메뉴 : 이름, 가격, 설명
-            System.out.println(menuItems.get(num - 1));
 
-
+            else if(num >= 1 && num <= (menuItems.size())) {
+                System.out.println(menuItems.get(num - 1));
+            }
         }
+
         // 프로그램을 종료
         System.out.print("시스템을 종료합니다.");
     }
-    //메뉴 출력
-    //사용자 입력 처리
-    //main함수에서 객체를 생성할때 값을 넘겨줌
 
 }
 

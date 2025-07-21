@@ -1,11 +1,26 @@
 package org.example;
+import Kiosk.Kiosk;
+import Kiosk.MenuItem;
+import java.util.ArrayList;
+import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and kiosk!");
+
+        // add 함수를 통해 new MenuItem(이름, 가격, 설명) List에 삽입
+
+        List<MenuItem> menuItems = new ArrayList<>();
+
+        menuItems.add(new MenuItem("1", "ShackBurger", "6.9", "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
+        menuItems.add(new MenuItem("2", "SmokeShack", "8.9", "베이컨, 체리페퍼에 쉑소스가 토핑된 치즈버거"));
+        menuItems.add(new MenuItem("3", "Cheeseburger", "6.9", "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
+        menuItems.add(new MenuItem("4", "Hamburger", "5.4", "비프패티를 기반으로 야채가 들어간 기본버거"));
+
+        Kiosk kiosk = new Kiosk(menuItems);
+        kiosk.start();
+
     }
+
+
 }
