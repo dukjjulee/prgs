@@ -7,11 +7,11 @@ public class MenuItem {
 
     //속성
     // List 선언 및 초기화
-    public int numbers;
-    public String name;
-    public String price;
-    public String explanation;
-    public String categoryset;
+    private int numbers;
+    private String name;
+    private String price;
+    private String explanation;
+    private String categoryset;
 
     //생성자
     public MenuItem(int numbers, String name, String price, String explanation, String categoryset) {
@@ -25,7 +25,25 @@ public class MenuItem {
         return numbers + ". " + name + "  | W " + price + " | " + explanation;
     }
 
+    public int getNumbers(){
+        return numbers;
+    }
 
+    public String getName(){
+        return name;
+    }
+
+    public String getPrice(){
+        return price;
+    }
+
+    public String getExplanation(){
+        return explanation;
+    }
+
+    public String getCategoryset(){
+        return categoryset;
+    }
 }
 
 

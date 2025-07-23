@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    List<Category> categorys = new ArrayList<>();
-    List<MenuItem> menuItems = new ArrayList<>();
+    private List <Category> categorys = new ArrayList<>();
+    private List<MenuItem> menuItems = new ArrayList<>();
 
     public Menu(){
 
@@ -29,5 +29,4 @@ public class Menu {
     public List<MenuItem> getMenuItem() {
         return menuItems;
     }
-    //구조에 맞게 함수 선언
 }
