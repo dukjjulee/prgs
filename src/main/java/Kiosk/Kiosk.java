@@ -39,6 +39,7 @@ public class Kiosk {
                 System.out.println("0. 종료");
 
                 // 숫자를 입력 받기
+                System.out.print("숫자 입력: ");
                 input = sc.nextInt();
 
                 //입력 받은 숫자가 올바르다면 인덱스로 활용하여 List 에 접근하기
@@ -57,22 +58,24 @@ public class Kiosk {
 
                         if (menuItems.get(number).getCategoryset().equals(categorys.get(input - 1).category)) {
                             System.out.println(menuItems.get(number));
-
                         }
+
                     }
 
                     System.out.println("0. 뒤로가기");
 
                     // 숫자를 입력 받기
+                    System.out.print("숫자 입력: ");
                     input = sc.nextInt();
 
                     //입력 받은 숫자가 올바르다면 인덱스로 활용하여 List 에 접근하기
                     if (input == 0) {
                         input = -1;
-                    } else if (input < 1 || input > (menuItems.size())) {
-                        System.out.println("해당 메뉴는 없습니다(1~" + (menuItems.size()) + ")");
                     }
 
+                    else if (input < 1 || input > (menuItems.size())) {
+                        System.out.println("해당 메뉴는 없습니다.(1~" + (menuItems.size()) + ")");
+                    }
                     // 선택한 메뉴 : 이름, 가격, 설명
 
                     //입력받은 숫자가 올바르다면 인덱스로 활용해서 Menu가 가지고 있는```List<MenuItem>```에 접근하기
