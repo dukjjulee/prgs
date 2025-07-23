@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Menu 객체 생성을 통해 이름 설정
+        //Menu 객체 생성
         Menu menu = new Menu();
 
         //Kiosk 객체 생성
