@@ -1,0 +1,34 @@
+package Kiosk;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Menu {
+
+    List<Category> categors = new ArrayList<>();
+    List<MenuItem> menuItems = new ArrayList<>();
+
+    public void menu(){
+
+        //List에 들어있는 MenuItem을 순차적으로 보여주는 함수
+
+
+        categors.add(new Category("Burger"));
+        categors.add(new Category("Drink"));
+
+        menuItems.add(new MenuItem("ShackBurger", "6.9", "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
+        menuItems.add(new MenuItem("SmokeShack", "8.9", "베이컨, 체리페퍼에 쉑소스가 토핑된 치즈버거"));
+        menuItems.add(new MenuItem("Cheeseburger", "6.9", "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
+        menuItems.add(new MenuItem("Hamburger", "5.4", "비프패티를 기반으로 야채가 들어간 기본버거"));
+
+    }
+
+    //List를 리턴하는 함수
+    public List<Category> getCategors(){
+        return categors;
+    }
+    public List<MenuItem> getMenuItem() {
+        return menuItems;
+    }
+    //구조에 맞게 함수 선언
+}

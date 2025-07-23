@@ -1,23 +1,27 @@
 package Kiosk;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MenuItem {
 
     //속성
     // List 선언 및 초기화
-    String num;
-    String name;
-    String price;
-    String explanation;
+    public String name;
+    public String price;
+    public String explanation;
 
     //생성자
-    public MenuItem(String num, String name, String price, String explanation) {
-        this.num = num;
+    public MenuItem( String name, String price, String explanation) {
         this.name = name;
         this.price = price;
         this.explanation = explanation;
     }
     public String toString() {
-        return num + ". " + name + "  | W " + price + " | " + explanation;
+        return ". " + name + "  | W " + price + " | " + explanation;
     }
+
+
 }
 
 

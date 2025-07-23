@@ -5,34 +5,36 @@ import java.util.Scanner;
 
 public class Kiosk {
 
-    //생성자를 통해 값 할당
-    List<MenuItem> menuItems = new ArrayList<>();
-
-    // menuItem 관리 필드
-    public Kiosk(List<MenuItem> menuItems) {
-        this.menuItems = menuItems;
-    }
-
+    int num = -1;
     //start함수 만들어 입력/ 반복문 로직 관리
     public void start() {
+
+        // menuItem 관리 필드
+        List<MenuItem> menuItems = new ArrayList<>();
+        List<Category> categorys = new ArrayList<>();
+
+
+        //스케너 선언
         Scanner sc = new Scanner(System.in);
 
-        int num = -1;
-
+        //반복문 시작
         while (num != 0) {
 
             // 반복문을 활용해 List 안에 있는 MenuItem을 하나씩 출력
+            System.out.println("\n[MAIN MENU]");
 
-            System.out.println("\n[SHAKESHACK MENU]");
             int number = 0;
-            for (number = 0; number < menuItems.size(); number++)
-                System.out.println(menuItems.get(number));
+            for(number = 0; number < categorys.size(); number++){
+                System.out.println(number);
+                System.out.println(categorys.get(number));
+            }
 
             System.out.println("0. 종료");
 
             // 숫자를 입력 받기
             num = sc.nextInt();
 
+            //입력 받은 숫자가 올바르다면 인덱스로 활용하여 List 에 접근하기
             if(num == 0 ){
                 break;
             }
@@ -43,14 +45,41 @@ public class Kiosk {
 
             // 선택한 메뉴 : 이름, 가격, 설명
 
+            //입력받은 숫자가 올바르다면 인덱스로 활용해서 Menu가 가지고 있는```List<MenuItem>```에 접근하기
             else if(num >= 1 && num <= (menuItems.size())) {
-                System.out.println(menuItems.get(num - 1));
-            }
-        }
 
+                System.out.println("\n[BURGERS MENU]");
+                number = 0;
+
+                for (number = 0; number < menuItems.size(); number++)
+                    System.out.println(number);
+                System.out.println(menuItems.get(number));
+
+                System.out.println("0. 종료");
+
+                // 숫자를 입력 받기
+                num = sc.nextInt();
+
+                //입력 받은 숫자가 올바르다면 인덱스로 활용하여 List 에 접근하기
+                if(num == 0 ){
+                    break;
+                }
+
+                else if(num < 1 || num > (menuItems.size())){
+                    System.out.println("해당 메뉴는 없습니다(1~"+ (menuItems.size()) +  ")");
+                }
+
+                // 선택한 메뉴 : 이름, 가격, 설명
+
+                //입력받은 숫자가 올바르다면 인덱스로 활용해서 Menu가 가지고 있는```List<MenuItem>```에 접근하기
+                else if(num >= 1 && num <= (menuItems.size())) {
+                    System.out.println(menuItems.get(num - 1));
+                }
+            }
+                System.out.println(menuItems.get(num - 1));
+        }
         // 프로그램을 종료
         System.out.print("시스템을 종료합니다.");
     }
 
 }
-
