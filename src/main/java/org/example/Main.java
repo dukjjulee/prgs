@@ -1,9 +1,6 @@
 package org.example;
 import Kiosk.Kiosk;
-import Kiosk.MenuItem;
 import Kiosk.Menu;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -12,15 +9,11 @@ public class Main {
         //Menu 객체 생성을 통해 이름 설정
         Menu menu = new Menu();
 
-        //Menu 클래스 내 있는 ```List<MenuItem>``` 에 MenuItem 객체 생성하면서 삽입
-
         //Kiosk 객체 생성
-        Kiosk kiosk = new Kiosk(MenuItem);
+        Kiosk kiosk = new Kiosk(menu.getMenuItem(), menu.getCategorys());
 
         //kiosk 내에서 시작하는 함수 호출
         kiosk.start();
 
     }
-
-
 }

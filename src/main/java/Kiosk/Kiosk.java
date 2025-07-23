@@ -5,27 +5,34 @@ import java.util.Scanner;
 
 public class Kiosk {
 
-    int num = -1;
+    List<MenuItem> menuItems = new ArrayList<>();
+    List<Category> categorys = new ArrayList<>();
+
+    public Kiosk(List<MenuItem> menuItems, List<Category> categorys){
+        this.menuItems = menuItems;
+        this.categorys = categorys;
+
+    }
+
     //start함수 만들어 입력/ 반복문 로직 관리
     public void start() {
 
         // menuItem 관리 필드
-        List<MenuItem> menuItems = new ArrayList<>();
-        List<Category> categorys = new ArrayList<>();
 
+        int num = -1;
 
         //스케너 선언
         Scanner sc = new Scanner(System.in);
 
         //반복문 시작
-        while (num != 0) {
+        while (num != 0 ){
 
             // 반복문을 활용해 List 안에 있는 MenuItem을 하나씩 출력
-            System.out.println("\n[MAIN MENU]");
+            System.out.println("[MAIN MENU]");
 
             int number = 0;
             for(number = 0; number < categorys.size(); number++){
-                System.out.println(number);
+                System.out.print(number + 1);
                 System.out.println(categorys.get(number));
             }
 
@@ -49,20 +56,21 @@ public class Kiosk {
             else if(num >= 1 && num <= (menuItems.size())) {
 
                 System.out.println("\n[BURGERS MENU]");
+
                 number = 0;
+                for (number = 0; number < menuItems.size(); number++) {
+                    System.out.print(number + 1);
+                    System.out.println(menuItems.get(number));
+                }
 
-                for (number = 0; number < menuItems.size(); number++)
-                    System.out.println(number);
-                System.out.println(menuItems.get(number));
-
-                System.out.println("0. 종료");
+                System.out.println("0. 뒤로가기");
 
                 // 숫자를 입력 받기
                 num = sc.nextInt();
 
                 //입력 받은 숫자가 올바르다면 인덱스로 활용하여 List 에 접근하기
                 if(num == 0 ){
-                    break;
+                    num = -1;
                 }
 
                 else if(num < 1 || num > (menuItems.size())){
@@ -75,11 +83,11 @@ public class Kiosk {
                 else if(num >= 1 && num <= (menuItems.size())) {
                     System.out.println(menuItems.get(num - 1));
                 }
+
             }
-                System.out.println(menuItems.get(num - 1));
         }
         // 프로그램을 종료
         System.out.print("시스템을 종료합니다.");
+        System.exit(0);
     }
-
 }

@@ -1,20 +1,16 @@
 package Kiosk;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-
-    List<Category> categors = new ArrayList<>();
+    List<Category> categorys = new ArrayList<>();
     List<MenuItem> menuItems = new ArrayList<>();
 
-    public void menu(){
+    public Menu(){
 
         //List에 들어있는 MenuItem을 순차적으로 보여주는 함수
-
-
-        categors.add(new Category("Burger"));
-        categors.add(new Category("Drink"));
+        categorys.add(new Category("Burger"));
+        categorys.add(new Category("Drink"));
 
         menuItems.add(new MenuItem("ShackBurger", "6.9", "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menuItems.add(new MenuItem("SmokeShack", "8.9", "베이컨, 체리페퍼에 쉑소스가 토핑된 치즈버거"));
@@ -24,8 +20,8 @@ public class Menu {
     }
 
     //List를 리턴하는 함수
-    public List<Category> getCategors(){
-        return categors;
+    public List<Category> getCategorys(){
+        return categorys;
     }
     public List<MenuItem> getMenuItem() {
         return menuItems;
